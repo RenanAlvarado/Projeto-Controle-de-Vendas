@@ -117,7 +117,7 @@
             this.txtCPF.Location = new System.Drawing.Point(65, 34);
             this.txtCPF.Mask = "###.###.###-##";
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(155, 22);
+            this.txtCPF.Size = new System.Drawing.Size(174, 22);
             this.txtCPF.TabIndex = 11;
             // 
             // label6
