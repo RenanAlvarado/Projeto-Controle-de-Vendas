@@ -31,27 +31,29 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtPreco = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRemover = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.dgvCarrinho = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnPagar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,53 +84,18 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCPF);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(9, 153);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(350, 123);
+            this.groupBox1.Size = new System.Drawing.Size(350, 165);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnRemover);
-            this.groupBox2.Controls.Add(this.btnAdicionar);
-            this.groupBox2.Controls.Add(this.txtQuantidade);
-            this.groupBox2.Controls.Add(this.txtDescricao);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtPreco);
-            this.groupBox2.Controls.Add(this.txtCodigo);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(9, 298);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(335, 196);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Produto";
-            // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(65, 34);
-            this.txtCPF.Mask = "###.###.###-##";
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(174, 22);
-            this.txtCPF.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Location = new System.Drawing.Point(11, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 16);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "CPF:";
             // 
             // txtNome
             // 
@@ -147,74 +114,55 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Nome:";
             // 
-            // txtQuantidade
+            // txtCPF
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(259, 98);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(64, 22);
-            this.txtQuantidade.TabIndex = 15;
+            this.txtCPF.Location = new System.Drawing.Point(65, 34);
+            this.txtCPF.Mask = "###.###.###-##";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(174, 22);
+            this.txtCPF.TabIndex = 11;
+            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
-            // label5
+            // label6
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label5.Location = new System.Drawing.Point(223, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 16);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Qtd:";
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label6.Location = new System.Drawing.Point(11, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "CPF:";
             // 
-            // txtPreco
+            // groupBox2
             // 
-            this.txtPreco.Location = new System.Drawing.Point(108, 98);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(109, 22);
-            this.txtPreco.TabIndex = 13;
+            this.groupBox2.Controls.Add(this.btnRemover);
+            this.groupBox2.Controls.Add(this.btnAdicionar);
+            this.groupBox2.Controls.Add(this.txtQuantidade);
+            this.groupBox2.Controls.Add(this.txtDescricao);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtPreco);
+            this.groupBox2.Controls.Add(this.txtCodigo);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(9, 324);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(335, 196);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Produto";
             // 
-            // label4
+            // btnRemover
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(14, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 16);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Preço em R$:";
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(74, 63);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(218, 22);
-            this.txtDescricao.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(14, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Nome:";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(74, 32);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(117, 22);
-            this.txtCodigo.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label7.Location = new System.Drawing.Point(14, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 16);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Código:";
+            this.btnRemover.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnRemover.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRemover.Location = new System.Drawing.Point(17, 139);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(127, 41);
+            this.btnRemover.TabIndex = 16;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = false;
             // 
             // btnAdicionar
             // 
@@ -228,17 +176,74 @@
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = false;
             // 
-            // btnRemover
+            // txtQuantidade
             // 
-            this.btnRemover.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnRemover.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRemover.Location = new System.Drawing.Point(17, 139);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(127, 41);
-            this.btnRemover.TabIndex = 16;
-            this.btnRemover.Text = "Remover";
-            this.btnRemover.UseVisualStyleBackColor = false;
+            this.txtQuantidade.Location = new System.Drawing.Point(259, 98);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(64, 22);
+            this.txtQuantidade.TabIndex = 15;
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(74, 63);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(218, 22);
+            this.txtDescricao.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label5.Location = new System.Drawing.Point(223, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 16);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Qtd:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label7.Location = new System.Drawing.Point(14, 35);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 16);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Código:";
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.Location = new System.Drawing.Point(108, 98);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(109, 22);
+            this.txtPreco.TabIndex = 13;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(74, 32);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(117, 22);
+            this.txtCodigo.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label4.Location = new System.Drawing.Point(14, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 16);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Preço em R$:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(14, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Nome:";
             // 
             // dgvCarrinho
             // 
@@ -301,6 +306,23 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(65, 119);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(259, 22);
+            this.textBox2.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label9.Location = new System.Drawing.Point(12, 122);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 16);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Data:";
+            // 
             // Form_vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -354,5 +376,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label9;
     }
 }

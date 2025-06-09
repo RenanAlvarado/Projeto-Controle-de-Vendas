@@ -311,5 +311,53 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
 
 
         #endregion
+
+        #region BuscarClientePorCPF
+
+        public Cliente buscar_cliente_cpf(string cpf)
+        {
+            try
+            {
+                //1ºPasso - Comando SQL
+                Cliente obj = new Cliente(); //Instancia o objeto Cliente
+
+                string sql = "select * from tb_clientes where cpf=@cpf"; //Alteração do Sql do método 
+
+                //2ºPasso - Organizar comando SQL e executar 
+
+                MySqlCommand executar_comando = new MySqlCommand(sql, conexao);
+
+                executar_comando.Parameters.AddWithValue("@cpf", cpf); //Adicionar a variavel nome
+
+                conexao.Open();
+
+                //Para retornar apenas um registro
+                MySqlDataReader registro = executar_comando.ExecuteReader(); //Retorna os dados filtrados
+
+                //Se encontrar algo
+                if (registro.Read())
+                {
+                    obj.codigo = registro.GetInt32("id");
+                    obj.nome = registro.GetString("nome");
+                }
+                else
+                {
+                    MessageBox.Show("Cliente não encontrado");
+                    return null;
+                }
+
+                conexao.Close();
+                    return obj;
+
+            }
+            catch (Exception erro)
+            {
+
+               MessageBox.Show("Aconteceu erro: " + erro);
+               return null;
+            }
+        }
+
+        #endregion
     }
 }
