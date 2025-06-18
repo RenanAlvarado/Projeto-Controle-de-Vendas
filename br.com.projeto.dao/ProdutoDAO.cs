@@ -294,5 +294,57 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
             }
         }
         #endregion
+
+        #region RetornarProdutoId
+
+        public Produto retornar_produto_id(int id)
+        {
+            try
+            {
+                Produto p = new Produto();
+                //1ºPasso
+                string sql = "select * from tb_produtos where id = @id";
+
+                //2ºPasso - Organizar e executar comando 
+                MySqlCommand executar_comando = new MySqlCommand(sql, conexao);
+                executar_comando.Parameters.AddWithValue("id", id);
+
+                conexao.Open();
+
+                //3ºPasso - Criar o data reader 
+
+                MySqlDataReader reader = executar_comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    
+
+                    p.codigo = reader.GetInt32("id");
+                    p.descricao = reader.GetString("descricao");
+                    p.preco = reader.GetDecimal("preco");
+
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Produto não encontrado!");
+                    return null;
+                }
+
+                conexao.Close();
+                return p;
+
+
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Aconteceu erro" + erro);
+                return null;
+            }
+        }
+
+        #endregion
     }
 }
