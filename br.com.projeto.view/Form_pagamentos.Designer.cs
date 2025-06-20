@@ -39,6 +39,8 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(516, 126);
+            this.panel1.Size = new System.Drawing.Size(875, 126);
             this.panel1.TabIndex = 5;
             // 
             // label1
@@ -78,7 +80,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label4.Location = new System.Drawing.Point(23, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 39);
+            this.label4.Size = new System.Drawing.Size(211, 38);
             this.label4.TabIndex = 14;
             this.label4.Text = "Dinheiro(R$):";
             // 
@@ -97,7 +99,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Location = new System.Drawing.Point(23, 210);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 39);
+            this.label2.Size = new System.Drawing.Size(188, 38);
             this.label2.TabIndex = 16;
             this.label2.Text = "Cartão(R$):";
             // 
@@ -117,7 +119,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label3.Location = new System.Drawing.Point(23, 267);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 39);
+            this.label3.Size = new System.Drawing.Size(174, 38);
             this.label3.TabIndex = 18;
             this.label3.Text = "Troco(R$):";
             // 
@@ -137,7 +139,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label5.Location = new System.Drawing.Point(23, 325);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 39);
+            this.label5.Size = new System.Drawing.Size(162, 38);
             this.label5.TabIndex = 20;
             this.label5.Text = "Total(R$):";
             // 
@@ -152,12 +154,35 @@
             this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Finalizar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtObs
+            // 
+            this.txtObs.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObs.Location = new System.Drawing.Point(581, 153);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(256, 257);
+            this.txtObs.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label6.Location = new System.Drawing.Point(479, 144);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 38);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "OBS:";
             // 
             // Form_pagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 450);
+            this.ClientSize = new System.Drawing.Size(875, 450);
+            this.Controls.Add(this.txtObs);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label5);
@@ -169,7 +194,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Name = "Form_pagamentos";
-            this.Text = "Tela de Pagamentos";
+            this.Text = "4";
             this.Load += new System.EventHandler(this.Form_pagamentos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -191,5 +216,7 @@
         private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtTroco;
+        private System.Windows.Forms.TextBox txtObs;
+        private System.Windows.Forms.Label label6;
     }
 }

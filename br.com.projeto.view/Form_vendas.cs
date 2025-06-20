@@ -49,7 +49,17 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.view
             {
                 cliente = dao.buscar_cliente_cpf(txtCPF.Text);
 
-                txtNome.Text = cliente.nome;
+                
+                //verificação para não fechar o programa 
+                if (cliente != null)
+                {
+                    txtNome.Text = cliente.nome;
+                }
+                else
+                {
+                    txtCPF.Clear();
+                    txtCPF.Focus();
+                }
             }
         }
 
@@ -60,8 +70,17 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.view
             {
                produto = dao_produto.retornar_produto_id(int.Parse(txtCodigo.Text));
 
-                txtDescricao.Text = produto.descricao;
-                txtPreco.Text = produto.preco.ToString();   
+                if (produto != null)
+                {
+                    txtDescricao.Text = produto.descricao;
+                    txtPreco.Text = produto.preco.ToString();
+                }
+                else
+                {
+                    txtCodigo.Clear();
+                    txtCodigo.Focus();
+                }
+               
             }
         }
 
@@ -145,6 +164,11 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.view
             tela.txtTotal.Text = total.ToString();
             tela.ShowDialog(); //Abrir a tela encima da outra, sem permitir mexer na anteriorn 
             //tela.show abre outra tela, mas pode alterar a anterior 
+        }
+
+        private void txtCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
 
         private void Form_vendas_Load(object sender, EventArgs e)

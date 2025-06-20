@@ -39,7 +39,7 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
                 executar_comando.Parameters.AddWithValue("@cliente_id", obj.cliente_id);
                 executar_comando.Parameters.AddWithValue("@data_venda", obj.data_venda);
                 executar_comando.Parameters.AddWithValue("@total_venda", obj.total_venda);
-                executar_comando.Parameters.AddWithValue("@observacoes", obj.obs);
+                executar_comando.Parameters.AddWithValue("@obs", obj.obs);
 
 
                 //3º --> Abrir a conexao e executar 
@@ -47,7 +47,7 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
                 conexao.Open();
                 executar_comando.ExecuteNonQuery();
 
-                MessageBox.Show("Venda Cadastrada com sucesso");
+                //MessageBox.Show("Venda Cadastrada com sucesso");
 
                 conexao.Close();
 
@@ -76,7 +76,7 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
                 //1º --> Criar sql 
 
                 //Função Max retorna o maior valor da coluna selecionada 
-                string sql = "select max(id) id from tb_vendas";
+                string sql = @"select max(id) id from tb_vendas";
 
                 //2º --> Organizar e executar o comando 
 
@@ -90,9 +90,7 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
 
                 if (reader.Read())
                 {
-                    id_venda = reader.GetInt32("id");
-
-                   
+                    id_venda = reader.GetInt32("id");             
                 }
 
                 conexao.Close();

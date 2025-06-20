@@ -37,9 +37,9 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
                 MySqlCommand executar_comando = new MySqlCommand(sql, conexao);
 
                 executar_comando.Parameters.AddWithValue("@venda_id", obj.id_venda);
-                executar_comando.Parameters.AddWithValue("@data_venda", obj.id_produto);
-                executar_comando.Parameters.AddWithValue("@total_venda", obj.quantidade);
-                executar_comando.Parameters.AddWithValue("@observacoes", obj.subtotal);
+                executar_comando.Parameters.AddWithValue("@produto_id", obj.id_produto);
+                executar_comando.Parameters.AddWithValue("@qtd", obj.quantidade);
+                executar_comando.Parameters.AddWithValue("@subtotal", obj.subtotal);
 
 
                 //3º --> Abrir a conexao e executar 
@@ -47,7 +47,7 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
                 conexao.Open();
                 executar_comando.ExecuteNonQuery();
 
-                MessageBox.Show("Item_Venda Cadastrado com sucesso");
+                //MessageBox.Show("Item_Venda Cadastrado com sucesso");
 
                 conexao.Close();
 
