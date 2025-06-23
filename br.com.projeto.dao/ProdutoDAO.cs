@@ -328,6 +328,7 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
                 else
                 {
                     MessageBox.Show("Produto não encontrado!");
+                    conexao.Close();
                     return null;
                 }
 
@@ -342,6 +343,80 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
 
                 MessageBox.Show("Aconteceu erro" + erro);
                 return null;
+            }
+        }
+
+        #endregion
+
+        #region BaixaNoEstoque
+
+        public void baixa_estoque(int id_produto, int qtd_nova)
+        {
+            try
+            {
+                //1ºPasso --> Criar comando Sql
+
+                string sql = "update tb_produtos set qtd_estoque = @qtd where id = @id";
+
+                //2ºPasso --> Organizar e executar comando sql 
+
+                MySqlCommand executar_comando = new MySqlCommand(sql, conexao);
+
+                executar_comando.Parameters.AddWithValue("@qtd", qtd_nova);
+                executar_comando.Parameters.AddWithValue("@id", id_produto);
+
+                //3º --> Abrir a conexao e executar 
+
+                conexao.Open();
+                executar_comando.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Aconteceu o erro: " + erro);
+            }
+        }
+
+        #endregion
+
+        #region RetornaEstoqueAtual
+
+        public int retorna_estoque_atual(int id)
+        {
+            try
+            {
+                //1ºPasso -- Comando Sql
+
+                string sql = "select qtd_estoque from tb_produtos where id = @id";
+
+                int qtd_estoque = 0;
+                //2ºPasso --> Organizar e executar comando sql 
+                MySqlCommand executar_comando = new MySqlCommand(sql, conexao);
+
+                
+                executar_comando.Parameters.AddWithValue("@id", id);
+
+                conexao.Open(); 
+
+                MySqlDataReader reader = executar_comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    qtd_estoque = reader.GetInt32("qtd_estoque");
+                    conexao.Close();            
+                }
+
+                return qtd_estoque;
+
+
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Aconteceu o erro: " + erro);
+                return 0; 
             }
         }
 

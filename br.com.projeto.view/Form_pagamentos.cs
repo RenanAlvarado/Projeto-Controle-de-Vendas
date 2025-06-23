@@ -47,6 +47,9 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.view
                 //Botão finalizar venda 
 
                 decimal v_dinheiro, v_cartao, troco, total_pago, total;
+                int qtd_estoque, qtd_comprada, estoque_atualizado;
+
+                ProdutoDAO produtoDAO = new ProdutoDAO();
 
                 v_dinheiro = decimal.Parse(txtDinheiro.Text);
                 v_cartao = decimal.Parse(txtCartao.Text);
@@ -92,10 +95,16 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.view
                         Item_venda item_venda = new Item_venda();
 
                         item_venda.id_venda = vendaDAO.retornar_id_ultima_venda();
-
                         item_venda.id_produto = int.Parse(linha["Código"].ToString());
                         item_venda.quantidade = int.Parse(linha["Qtd"].ToString());
                         item_venda.subtotal = decimal.Parse(linha["SubTotal"].ToString());
+
+                        //Baixa no estoque 
+                        qtd_estoque = produtoDAO.retorna_estoque_atual(item_venda.id_produto);
+                        qtd_comprada = item_venda.quantidade;
+                        estoque_atualizado = qtd_estoque - qtd_comprada;
+
+                        produtoDAO.baixa_estoque(item_venda.id_produto, estoque_atualizado);
 
                         ItemVendaDAO itemVendaDAO = new ItemVendaDAO();
 

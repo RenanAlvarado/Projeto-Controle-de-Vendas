@@ -343,7 +343,9 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
                 else
                 {
                     MessageBox.Show("Cliente não encontrado");
+                    conexao.Close();
                     return null;
+                   
                 }
 
                 conexao.Close();

@@ -1,4 +1,5 @@
-﻿using Projeto_Controle_de_Vendas.br.com.projeto.dao;
+﻿using MySql.Data.MySqlClient;
+using Projeto_Controle_de_Vendas.br.com.projeto.dao;
 using Projeto_Controle_de_Vendas.br.com.projeto.model;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,11 @@ using System.Windows.Forms;
 
 namespace Projeto_Controle_de_Vendas.br.com.projeto.view
 {
+  
+
     public partial class Form_vendas : Form
     {
+       
         ClienteDAO dao = new ClienteDAO();
         Cliente cliente = new Cliente();
 
@@ -57,6 +61,7 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.view
                 }
                 else
                 {
+                    
                     txtCPF.Clear();
                     txtCPF.Focus();
                 }
