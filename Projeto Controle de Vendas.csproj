@@ -118,6 +118,12 @@
     <Compile Include="br.com.projeto.view\Form_clientes.Designer.cs">
       <DependentUpon>Form_clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.projeto.view\Form_detalhes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.projeto.view\Form_detalhes.Designer.cs">
+      <DependentUpon>Form_detalhes.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.projeto.view\Form_fornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     </Compile>
     <Compile Include="br.com.projeto.view\Form_funcionarios.Designer.cs">
       <DependentUpon>Form_funcionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="br.com.projeto.view\Form_historico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.projeto.view\Form_historico.Designer.cs">
+      <DependentUpon>Form_historico.cs</DependentUpon>
     </Compile>
     <Compile Include="br.com.projeto.view\Form_pagamentos.cs">
       <SubType>Form</SubType>
@@ -159,11 +171,17 @@
     <EmbeddedResource Include="br.com.projeto.view\Form_clientes.resx">
       <DependentUpon>Form_clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="br.com.projeto.view\Form_detalhes.resx">
+      <DependentUpon>Form_detalhes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="br.com.projeto.view\Form_fornecedores.resx">
       <DependentUpon>Form_fornecedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.projeto.view\Form_funcionarios.resx">
       <DependentUpon>Form_funcionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.projeto.view\Form_historico.resx">
+      <DependentUpon>Form_historico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.projeto.view\Form_pagamentos.resx">
       <DependentUpon>Form_pagamentos.cs</DependentUpon>
