@@ -164,7 +164,7 @@
             // 
             this.cbNivel.FormattingEnabled = true;
             this.cbNivel.Items.AddRange(new object[] {
-            "Administrador ",
+            "Administrador",
             "Usuário"});
             this.cbNivel.Location = new System.Drawing.Point(196, 249);
             this.cbNivel.Name = "cbNivel";
