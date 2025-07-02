@@ -2,6 +2,7 @@
 using Mysqlx;
 using Projeto_Controle_de_Vendas.br.com.projeto.connection;
 using Projeto_Controle_de_Vendas.br.com.projeto.model;
+using Projeto_Controle_de_Vendas.br.com.projeto.view;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -306,6 +307,86 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
 
                 MessageBox.Show("Aconteceu erro: " + erro);
                 return null;
+            }
+
+        }
+
+        #endregion
+
+        #region EfetuarLogin
+
+        public bool efetuar_login(string email, string senha)
+        {
+            try
+            {
+                //1º Passo --> Comando Sql
+
+                string sql = "select * from tb_funcionarios where email = @email and " +
+                    "senha = @senha";
+
+
+                //2º Passo -> Organizar e executar comando sql
+                MySqlCommand executar_comando = new MySqlCommand(sql, conexao);
+
+                executar_comando.Parameters.AddWithValue("@email", email);
+                executar_comando.Parameters.AddWithValue("@senha", senha);
+
+
+                //3ºPasso --> Abrir conexão e executar comando sql
+                conexao.Open(); //Abrir conexão
+
+                //Le os dados e retorna os dados após o comando execute reader
+                MySqlDataReader reader = executar_comando.ExecuteReader();
+
+                //ver se o reader consegue ler ou não 
+                if (reader.Read())
+                {
+                    //Verificação de nível de acesso
+
+                    string nivel = reader.GetString("nivel_acesso");
+                    string nome = reader.GetString("nome");
+
+                    //Que o login foi realizado com  sucesso
+                    MessageBox.Show("Seja bem vindo ao sistema " + nome);
+
+                    Form_menu form_Menu = new Form_menu();
+
+                    form_Menu.statusUsuario.Text = nome;
+
+                    if (nivel.Equals("Administrador "))
+                    {
+                        //Abrir a tela do menu principal
+                        form_Menu.Show();
+                    }
+                    else if (nivel.Equals("Usuário"))
+                    {
+                        //Personalizar o que o vendedor tem acesso
+                        form_Menu.menuProduto.Visible = false; //Ou Enabled
+                        form_Menu.menuHistoricoVenda.Visible = false;
+                        form_Menu.Show();
+                    }
+
+
+                        return true;
+                    
+                }
+                else
+                {
+                    //Senha ou email digitado errado ou usuário não existe
+                    MessageBox.Show("Email ou senha incorreto!");
+                    conexao.Close();
+                    return false;
+                }
+
+
+                   
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Aconteceu erro:  " + erro);
+                conexao.Close();
+                return false;
             }
 
         }

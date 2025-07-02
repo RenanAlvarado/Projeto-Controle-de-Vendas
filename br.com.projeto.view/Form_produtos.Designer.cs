@@ -341,15 +341,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabProdutos;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisa;
@@ -362,5 +359,8 @@
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbFornecedor;
+        public System.Windows.Forms.TabControl tabProdutos;
+        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }

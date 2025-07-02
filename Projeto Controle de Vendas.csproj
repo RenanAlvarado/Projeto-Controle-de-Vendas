@@ -142,6 +142,18 @@
     <Compile Include="br.com.projeto.view\Form_historico.Designer.cs">
       <DependentUpon>Form_historico.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.projeto.view\Form_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.projeto.view\Form_login.Designer.cs">
+      <DependentUpon>Form_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="br.com.projeto.view\Form_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.projeto.view\Form_menu.Designer.cs">
+      <DependentUpon>Form_menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.projeto.view\Form_pagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +195,12 @@
     <EmbeddedResource Include="br.com.projeto.view\Form_historico.resx">
       <DependentUpon>Form_historico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="br.com.projeto.view\Form_login.resx">
+      <DependentUpon>Form_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.projeto.view\Form_menu.resx">
+      <DependentUpon>Form_menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="br.com.projeto.view\Form_pagamentos.resx">
       <DependentUpon>Form_pagamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +218,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -215,6 +234,32 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-cliente-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-funcionários-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-engrenagem-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fornecedor-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-funcionários-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-saco-de-papel-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-box-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium_photo-1701590725721-add548ecdf61.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
