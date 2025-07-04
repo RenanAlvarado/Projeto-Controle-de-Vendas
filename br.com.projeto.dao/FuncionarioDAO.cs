@@ -353,7 +353,7 @@ namespace Projeto_Controle_de_Vendas.br.com.projeto.dao
 
                     form_Menu.statusUsuario.Text = nome;
 
-                    if (nivel.Equals("Administrador "))
+                    if (nivel.Equals("Administrador"))
                     {
                         //Abrir a tela do menu principal
                         form_Menu.Show();
