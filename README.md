@@ -33,3 +33,14 @@ Este projeto foi desenvolvido com foco em aprendizado prático e aplicação de 
 - Banco de dados: MySQL
   
 ---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Renan Amaral, baseado no curso: https://www.udemy.com/share/108F523@m8gqySVPCfiQXitItFMaz_U5LHx6Nkbu0ikHy2YunhZdATQZvMHHQyvROTcanPrQFA==/**  
+
+🎓 Estudante de Análise e Desenvolvimento de Sistemas - Fatec Guarulhos  
+💻 Focado em desenvolvimento web, desktop e soluções tecnológicas  
+🚀 Em busca da primeira oportunidade na área de tecnologia  
+
+🔗 GitHub: https://github.com/RenanAlvarado  
+🔗 LinkedIn: https://www.linkedin.com/in/renan-amaral1/
